@@ -1,0 +1,82 @@
+Exercise 1. Suppose $X$ is a vector space. All sets mentioned below are understood to be subsets of $X$. Prove the following statements from the axioms as given in Section 1.4. (Some of these are tacitly used in the text.)
+
+\begin{enumerate}[label=(\alph*)]
+    \item If $x \in X$ and $y\in X$ there is a unique $z\in X$ such that $x+z=y$.
+          \begin{itemize}
+              \item Let $z=y+(-x)$. If $x,y\in X$, then $z\in X$. Therefore:
+
+                    $$x+z=x+(y+(-x))=y$$
+
+                    Therefore, $\exists z$, st $x+z=y$. Now suppose there is $z_1,z_2 \in X$, such that $x+z_1=y$ and $x+z_2=y$. Therefore,
+
+                    $$x+z_1=x+z_2 \implies x+z_1+(-x)=x+z_2+(-x) \ implies z_1=z_2$$
+
+
+              \item \textbf{Incorret:} Suppose there is $z_1,z_2 \in X$, such that $x+z_1=x+z_2=y$. Let $\{x_i\}_i^n$ be a basis for $X$, such that $x=a_1x_1+a_2x_2+\cdots+a_nx_n$, $z_1=b_1x_1+b_2x_2+\cdots+b_nx_n$, $z_2=c_1x_1+c_2x_2+\cdots+c_nx_n$, and $y=d_1x_1+d_2x_2+\cdots+d_nx_n$, thus
+
+                    $$x+z_1=(a_1+b_1)x_1+(a_2+b_2)x_2+\cdots+(a_n+b_n)x_n,$$
+                    $$x+z_2=(a_1+c_1)x_1+(a_2+c_2)x_2+\cdots+(a_n+c_n)x_n.$$
+
+                    Since $x+z_1=x+z_2$, then $(a_i+b_i)=(a_i+c_i)$ for all $i$. Therefore, $b_i=c_i \ \forall i$ and thus $z_1=z_2$
+
+          \end{itemize}
+
+    \item $0x=0=\alpha 0$ if $x\in X$ and $\alpha$ is a scalar
+          \begin{itemize}
+              \item Let $0x=(0+0)x = 0x + 0x$. Get the additive inverse on both sides
+
+                    $$
+                        0=0x-0x = (0x + 0x) -0x=0x+(0x-0x)=0x.
+                    $$
+
+                    Now, let $\alpha 0 = \alpha(x-x)$, for some $x\in X$, then
+
+                    $$\alpha 0=\alpha x-\alpha x=0.$$
+
+          \end{itemize}
+
+    \item $2A \subset A+A$; it may happen that $2A\neq A+A$
+          \begin{itemize}
+              \item Since $2A=\{2a: a \in A\}$, and $A+A=\{a_1+a_2: a_1\in A, a_2\in A\}$, then let $a\in A$, $a+a\in 2A$ and $a+a\in A+A$, therefore $2A\subset A+A$. Now, let $a_1, a_2 \in A$, s.t. $a_1 \neq a_2$, and $a_1+a_2\in A+A$, but $a_1+a_2\notin 2A$. Therefore, $2A\neq A+A$.
+          \end{itemize}
+
+    \item $A$ is convex iff $(s+t)A=sA+tA$ for all positive scalar $s$ and $t$
+          \begin{itemize}
+              \item Let $A$ convex, then $tA+(1-t)A\subset A$ for all $0\leq t\leq 1$. Let $r,s\in\mathbb{R}$, and $a_2,a_3\in A$, st. $sa_2+ra_3=N$. Since $A$ is convex, then, there is $a_2=ta_1+(1-t)a_5$ and $a_3=ta_1+(1-t)a_6$, then:
+
+                    $$
+                        (r+s)a_1=
+                        t(r+s)a_2+(1-t)(r+s)a_3=
+                        tra_2+(1-t)ra_3+tsa_2+(1-t)sa_3=
+                        ra_4+sa_5.
+                    $$
+
+                    Now, let $(s+t)a_1=sa_2+ta_3$, $a_2=\frac{s+t}{s}a_1-\frac{t}{s}a_3$. Let $s=-1$, then $a_2=(1-t)a_1+ta_3$ $\forall \ t$. Therefore, $A$ is convex.
+
+          \end{itemize}
+
+    \item Every union (and intersection) of balanced sets is balanced
+        \begin{itemize}
+            \item Let $A$, $B$ be balanced sets, then $\forall \ |\alpha|\leq 1, \ \alpha A\subset A$ and $\alpha B\subset B$. Take $\alpha x\in \alpha(A\cup B)=\{\alpha x:x\in A \cup B\}$, st $x\in A \cup B$. If $x\in A$, then $\alpha x \in \alpha A \implies \alpha x \in A$, and if $x\in B$, $\alpha x \in \alpha B \implies \alpha x \in B$, because $A$ and $B$ are balanced. Therefore, $\alpha x \in A\cup B$.
+
+                Now, let $\alpha x\in\alpha(A\cap B)=\{\alpha x :x\in A \cap B\}$. Since $|\alpha|\leq 1$, and $x\in A\cap B$, then $\alpha x \in \alpha A$, but also $\alpha x \in B$. Therefore, $\alpha (A\cap B)\in A\cap B$.
+        \end{itemize}
+
+    \item Every intersection of convex sets is convex
+        \begin{itemize}
+            \item Let $A$, and $B$ st $\forall |t|\leq 1$ $\exists a_1,a_2 \in A$, st $ta_1+(1-t)a_2\in A$ and $\exists b_1,b_2 \in B$, st $tb_1+(1-t)b_2\in B$. Suppose $x\in A\cap B$, then $x\in A$, therefore $\exists t \in\mathbb{R}$ and $a_1,a_2 \in A$ st $x=ta_1+(1-t)a_2$, and since $x\in B$, $\exists t' \in\mathbb{R}$ and $b_1,b_2 \in B$ st $x=t'b_1+(1-t')b_2$. Suppose $t'' \in \mathbb{R}$ and $c_1, \ c_2 \in A\cap B$, then:
+            
+            \begin{align*}
+            &t''c_1+(1-t'')c_2\\
+            &=t''[ta_1+(1-t)a_2]+(1-t'')[t'a_3+(1-t')a_4]\\
+            &=t''[ta_1+(1-t)a_2]+(1-t'')[ta_3+(1-t)a_4]\\
+            &=t(t''a_1+(1-t'')a_3)+(1-t)[t''a_2+(1-t'')a_4].
+            \end{align*}
+
+            Then $t''c_1+(1-t'')c_2 \in A$ and, by a similar argument, $t''c_1+(1-t'')c_2 \in B$.
+        \end{itemize}
+    \item If $\Gamma$ is a collection of convex sets that is totally ordered by set inclusion, then the union of all members of $\Gamma$ is convex;
+    \item If $A$ and $B$ are convex, so is $A+B$
+    \item If $A$ and $B$ are balanced, so is $A+B$
+    \item Show that parts (f), (g), (h) hold with subspaces in place of convex sets
+\end{enumerate}

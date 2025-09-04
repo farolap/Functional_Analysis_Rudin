@@ -1,0 +1,33 @@
+Let $X$ be a topological vector space. All sets mentioned below are understood to be the subsets of $X$. Prove the following statements:
+\begin{enumerate}
+    \item The convex hull of every open set is open
+    \begin{itemize}
+        \item If $A$ is open, then there is $x\in A$, such that $B_{\varepsilon}(x)\subset A$, $\forall \varepsilon >0$. Let $B$ be the convex hull of $A$, then there is $x_1,\cdots,x_n\in A$, and $t_i\in\mathbb{R}$, such that $t_1x_1+\cdots+t_nx_n\in B$ and $\sum_it_i=1$. Take then the set
+
+        \begin{align*}
+            t_1B_{\varepsilon_1}(x_1)+t_2B_{\varepsilon_2}(x_2)+\cdots+t_nB_{\varepsilon_n}(x_n) && \varepsilon_1, \varepsilon_2,\cdots,\varepsilon_n >0.
+        \end{align*}
+        Since $A$ is open, then $B_{\varepsilon_i}(x_i)\subset A$. Since $B_\varepsilon(x_i)=\{x: |x-x_i|\leq\varepsilon\}$, then $t_iB_\varepsilon(x_i)=\{t_ix: |x-x_i|\leq\varepsilon\}$ and $B_\varepsilon(t_ix_i)=\{x: |x-t_ix_i|\leq\varepsilon\}$. If we take $x\in B_\varepsilon(t_ix_i)$, then $x'\in B_\varepsilon(x_i)$, such that $x=t_ix'$ and, therefore, $t_ix'\in t_iB_\varepsilon(x_i)$. Therefore, $t_iB_\varepsilon(x_i)=B_\varepsilon(t_ix_i)$. Now, take $B_\varepsilon(x_i)$ and $B_\varepsilon(x_j)$, it is obvious that $B_\varepsilon(x_i)+B_\varepsilon(x_j)=B_\varepsilon(x_i+x_j)$. Finally, take $\varepsilon=\min\{\varepsilon_1,\varepsilon_2,\cdots,\varepsilon_n\}$, then
+
+        \begin{align*}
+            x \in t_1B_{\varepsilon}(x_1)+t_2B_{\varepsilon}(x_2)+\cdots+t_nB_{\varepsilon}(x_n)=B_{\varepsilon}(t_1x_1+t_2x_2+\cdots+t_nx_n).
+        \end{align*}
+        Due to the openness of $A$, $x\in A$, and therefore the convex hull is open.
+
+    \end{itemize}
+
+    \item If $X$ is locally convex then the convex hull of every bounded set is bounded (This is false without local convexity; see Section 1.47)
+    \begin{itemize}
+        \item Since $X$ is locally convex, then there's $U$ a neighborhood of $0$ such that $\exists \ V \subset U$ convex. Since $V$ is convex, then $\text{conv}\ V=V$. Also we now that $\text{conv} \ tV=t\text{conv} \ V$. Take $A\subset tV$, then
+        
+        $$
+        A\subset tV \implies \text{conv }A\subset \text{conv }(tV)= t\text{conv }(V)\subset tU
+        $$
+
+        % $U+U\subset U$ and $\lambda U\subset U$ for all $\lambda\in\mathbb{R}$. Let $A$ be a bounded set, then there exists $M>0$ such that $A\subset MB_U(0)$. The convex hull of $A$ is the smallest convex set containing $A$, and since $MB_U(0)$ is convex, we have that $A\subset MB_U(0)\implies \text{conv}(A)\subset MB_U(0)$. Therefore, the convex hull of $A$ is bounded.
+    \end{itemize}
+    \item If $A$ and $B$ and bounded, so is $A+B$
+    \item If $A$ and $B$ and compact, so is $A+B$
+    \item If $A$ is compact and $B$ is closed, then $A+B$ is closed;
+    \item The sum of two closed sets may fail to be closed [The inclusion in (b) of Theorem 1.13 may therefore be strict.]
+\end{enumerate}

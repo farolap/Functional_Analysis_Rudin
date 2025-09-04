@@ -1,0 +1,59 @@
+The convex hull of a set $A$ in a vector space $X$ is the set of all convex combinations of members of $A$, that is, the set of all sums
+
+$$t_1x_1+\cdots+t_nx_n$$
+
+in which $x_i\in A$, $t_i\geq 0$, $\sum_i t_i=1$; $n$ is arbitrary. Prove that the convex hull of $A$ is convex and that it is the intersection of all convex sets that contain $A$.
+
+\begin{itemize}
+    \item Let $a\in\tilde{A}=\{t_1x_1+\cdots+t_nx_n : t_i\geq0, \ \sum_i t_i=1, \ x_i\in X\}$
+    
+    \begin{align*}
+        t_1(tx_{11}+(1-t)x_{12})+\cdots+t_n(tx_{n1}+(1-t)x_{n2})=\\
+        t(t_1x_{11}+t_2x_{21}+\cdots+t_nx_{n1})+(1-t)(t_1x_{12}+t_2x_{22}+\cdots+t_nx_{n2}).
+    \end{align*}
+
+    $t_1x_{11}+t_2x_{21}+\cdots+t_nx_{n1}$ and $t_1x_{12}+t_2x_{22}+\cdots+t_nx_{n2}$ is in the convex hull of $A$, and, therefore, it is convex.
+
+    Let $B_1$ convex and $b_{11},b_{12}\in B_1$ and $A\subset B_1$, therefore
+
+    $$
+    x=tb_{11}+(1-t)b_{12}
+    $$
+    Now let $B_2$ also convex, such that $b_{12}\in B_1\cap B_2$, then there is $t'$, st
+
+    \begin{align*}
+        x=tb_{11}+(1-t)(t'b_{21}+(1-t')b_{22})=tb_{11}+(1-t)t'b_{21}+(1-t)(1-t')b_{22}\\
+        =tb_{11}+(1-t)t'b_{21}+(1-t)(1-t')t''b_{31}+(1-t)(1-t')(1-t'')b_32
+    \end{align*}
+
+    Subsequentially:
+
+    \begin{align*}
+        x=tb_{11}+(1-t)(t'b_{21}+(1-t')b_{22})=tb_{11}+(1-t)t'b_{21}+(1-t)(1-t')b_{22}\\
+        =tb_{11}+(1-t)t'b_{21}+(1-t)(1-t')t''b_{31}+(1-t)(1-t')(1-t'')b_32
+    \end{align*}
+
+    Letting, the existence of $B_n$, then
+
+    $$
+    t^{(1)}+(1-t^{(1)})t^{(2)}+(1-t^{(1)})(1-t^{(2)})t^{(3)}+ \cdots + \sum_i^n\prod_j^{i-1}(1-t^{(j)})t^{(i)}=1
+    $$
+
+    Therefore, $A\subset \bigcap_i B_i$ and that it is the convex hull of $A$
+
+\end{itemize}
+%        x
+%       /|\
+%      / | \
+%     /  |  \
+%    /   |   \
+%   /    |    \
+%  /     |     \
+% x------x------x
+%  \     |     /
+%   \    |    /
+%    \   |   /
+%     \  |  /
+%      \ | /
+%       \|/
+%        x
