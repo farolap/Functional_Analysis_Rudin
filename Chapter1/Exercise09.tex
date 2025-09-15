@@ -7,3 +7,19 @@ Suppose
     \item $\Lambda x=0 \ \forall \ x \in N$
 \end{enumerate}
 Prove that there is a unique $f: X/N\to Y$ which satisfies $\Lambda=f\circ \pi$, that is, $\Lambda x=f(\pi(x))$ for all $x\in X$. Prove that this $f$ is linear and that $\Lambda$ is continuous iff $f$ is continuous. Also, $\Lambda$ is open iff $f$ is open.
+
+\begin{itemize}
+    \item Let $f(z) := \Lambda x$ and $z=\pi(x)=x+N$. Let $x_1,x_2\in X$ and $x_1-x_2\in N$, then
+    
+    $$\Lambda x_1-x_2=0\implies \Lambda x_1-\Lambda x_2\implies \Lambda x_1=\Lambda x_2.$$
+    Additionally, $g(z) = g(\pi(x)) = \Lambda(x) = f(\pi(x)) = f(z)$, so $g=f$. So its unique.
+
+    
+
+\end{itemize}
+
+Hints:
+\begin{itemize}
+    \item $\pi: X \to X/N \implies \pi(x)=x+N=\{x+n: n\in N\}$
+    \item $\Lambda x=f(\pi(x))$
+\end{itemize}

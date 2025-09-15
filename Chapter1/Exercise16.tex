@@ -1,0 +1,10 @@
+Prove that the space $C(\Omega)$ does not depend on the particular choice of $\{K_n\}$, as long as this sequence satisfies the conditions specified in Section 1.44. Do the same for $C^\infty(\Omega)$ (Section 1.46.).
+
+\begin{itemize}
+    \item Let $\{K_n\}$ and $\{K_m'\}$ be compact sets as given by Section 1.44, with which seminorms are $p_n(f)=\sup\{|f(x)|: x\in K_n\}$, $p'_m(f)=\sup\{|f(x)|: x\in K_m'\}$. Suppose $U\subset C(\Omega)$ open, and $f_j\in U$, such that for each $\varepsilon >0$ $\exists j>J\in \mathbb{N}$, such that \ $p_n(f_j-f) < \varepsilon$. Since $\bigcup_n K_n=\bigcup_m K'_m=\Omega$ and $K_n\subset K_{n+1}$ and $K'_mn\subset K'_{m+1}$, there exists $N\in\mathbb{N}$, such that $K'_m\subset K_n$. Therefore
+    $$
+    p'_m(f)=\sup_{x\in K'_m}|f(x)|\leq\sup_{x\in K_n}|f(x)|=p_n(f).
+    $$
+
+    Therefore, $p'_m(f_j-f)\leq p'_n(f_j-f)\leq\varepsilon$.
+\end{itemize}
